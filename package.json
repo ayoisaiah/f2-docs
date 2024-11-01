@@ -1,0 +1,17 @@
+{
+  "name": "f2-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "vitepress": "^1.3.4"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "Ayooluwa Isaiah",
+  "license": "ISC"
+}
