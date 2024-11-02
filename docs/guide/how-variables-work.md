@@ -54,11 +54,15 @@ F2 will replace each variable with the appropriate data from the file:
 
 ## Transforming Variables
 
-You can also transform variables. For example, to uppercase the filename:
+You can also
+[transform variables](https://f2.freshman.tech/guide/string-transforms.html).
+For example, to uppercase the filename:
 
 ```bash
 f2 -r "{p}_{f.up}{ext}"
 ```
+
+Output:
 
 ```text
  *—————————————*——————————————————————————*————————*
@@ -80,7 +84,7 @@ Some variables, like `{p}`, also offer unique customization options. Assuming
 the absolute path for the `house-chores` directory is:
 
 ```text
-/home/ayo/dev/demo/f2/docs/house-chores
+/home/user/dev/demo/f2/docs/house-chores
 ```
 
 You may retrieve each directory in the path by prefixing the `{p}` variable with
@@ -96,6 +100,8 @@ a number as in `{2p}`, `{3p}` etc. Here, this will yield the following output:
 f2 -r "{3p.up}_{2p}_{p}_{f.up}{ext}"
 ```
 
+Output:
+
 ```text
 *—————————————*——————————————————————————————————*————————*
 |  ORIGINAL   |             RENAMED              | STATUS |
@@ -106,3 +112,16 @@ f2 -r "{3p.up}_{2p}_{p}_{f.up}{ext}"
 | washing.md  | F2_docs_house-chores_WASHING.md  | ok     |
 *—————————————*——————————————————————————————————*————————*
 ```
+
+## Built-in Variables
+
+The following variables have been provided for maximum flexibility in file
+renaming:
+
+- [Filepath variables](https://f2.freshman.tech/guide/filename-path-variables.html)
+- [Exif variables](https://f2.freshman.tech/guide/exif-variables.html)
+- [ID3 variables](https://f2.freshman.tech/guide/id3-variables.html)
+- [Date variables](https://f2.freshman.tech/guide/date-variables.html)
+- [Exiftool variables](https://f2.freshman.tech/guide/exiftool-variables.html)
+- [File hash variables](https://f2.freshman.tech/guide/file-hash-variables.html)
+- [String transformations](https://f2.freshman.tech/guide/string-transforms.html)

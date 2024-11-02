@@ -1,46 +1,39 @@
 # What is F2?
 
-F2 is a versatile tool for bulk renaming files and directories in Linux, macOS,
-and Windows. It simplifies the renaming process by offering powerful workflows
-while prioritizing safety to prevent data loss (such as overwriting files by
-accident).
-
-Additionally, F2 allows you to undo any operation, ensuring mistakes can be
-easily corrected.
+F2 is a cross-platform tool for bulk renaming files and directories on Linux,
+macOS, and Windows. It simplifies the renaming process by offering powerful
+workflows while prioritizing safety to prevent data loss (such as overwriting
+files by accident).
 
 ## What does F2 do differently?
 
 Compared to other renaming tools, F2 offers several key advantages:
 
-- **Dry Run by Default**: F2 automatically performs a dry run, showing you the
-  changes in an easy-to-understand format before proceeding, so you can review
-  and confirm the actions.
-
-- **Safety First**: F2 prioritizes accuracy by ensuring every renaming operation
-  is conflict-free and error-proof.
-
-- **Conflict Resolution**: It validates each renaming operation before execution
-  and provides an easy way to automatically resolve any conflicts detected.
+- **Dry Run by Default**: It defaults to a dry run so that you can review the
+  renaming changes before proceeding.
 
 - **Variable Support**: F2 allows you to use file attributes, such as EXIF data
-  for images and ID3 tags for audio files, to give you greater flexibility in
+  for images or ID3 tags for audio files, to give you maximum flexibility in
   renaming.
 
 - **Comprehensive Options**: Whether it's simple string replacements or complex
-  regular expression operations, F2 provides a full range of renaming
-  capabilities.
+  regular expressions, F2 provides a full range of renaming capabilities.
+
+- **Safety First**: It prioritizes accuracy by ensuring every renaming operation
+  is conflict-free and error-proof through rigorous checks.
+
+- **Conflict Resolution**: Each renaming operation is validated before execution
+  and detected conflicts can be automatically resolved.
 
 - **High Performance**: F2 is extremely fast and efficient, even when renaming
   thousands of files at once.
 
-- **Undo Functionality**: Any renaming operation can be easily undone, giving
-  you peace of mind in case of mistakes.
+- **Undo Functionality**: Any renaming operation can be easily undone to allow
+  the easy correction of mistakes.
 
 - **Extensive Documentation**: F2 is well-documented with clear, practical
   examples to help you make the most of its features without confusion.
 
 ## A Tour of F2
-
-![F2 normal renaming operation](screenshots/1.png)
 
 ![Photo renaming](screenshots/2.png)

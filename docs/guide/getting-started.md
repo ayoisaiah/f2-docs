@@ -14,36 +14,23 @@ files. You can even choose to build the program from the source if you prefer.
 ## Install with Go
 
 If you have Go installed, you can easily install F2 using the `go install`
-command:
+command (requires v1.23 or later):
 
-```shell
+```bash
 go install github.com/ayoisaiah/f2/cmd/f2@latest
 ```
 
-## Install via NPM or Yarn
+## Install via NPM
 
-For users who have Node.js installed,
+If you have Node.js installed,
 [the F2 package](https://www.npmjs.com/package/@ayoisaiah/f2) can be installed
-through npm, yarn, or any other Node.js package manager. This method
-automatically downloads and installs the appropriate binary for your operating
-system and architecture.
-
-<!-- prettier-ignore-start -->
-::: code-group
+through `npm`:
 
 ```bash [npm]
 npm i @ayoisaiah/f2 -g
 ```
 
-```bash [yarn]
-yarn global add @ayoisaiah/f2
-```
-
-```bash [bun]
-bun install -g @ayoisaiah/f2
-```
-:::
-<!-- prettier-ignore-end -->
+Note that other package managers are not guaranteed to work.
 
 ## Install on Linux
 

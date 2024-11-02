@@ -1,7 +1,7 @@
 # Command-Line Options
 
 ```text
-f2 v1.10.0
+f2 v2.0.0
 Ayooluwa Isaiah <ayo@freshman.tech>
 
 f2 bulk renames files and directories, matching files against a specified
@@ -43,6 +43,9 @@ OPTIONS
   --allow-overwrites
     Allows the renaming operation to overwrite existing files.
     Caution: Using this option can lead to unrecoverable data loss.
+
+  -c, --clean
+    Clean empty directories that were traversed in a renaming operation.
 
   -E, --exclude
     Excludes files and directories that match the provided regular expression.
@@ -124,7 +127,7 @@ OPTIONS
   -p, --pair
     Enable pair renaming to rename files with the same name (but different
     extensions) in the same directory to the same new name. In pair mode,
-    file extensions are ignored and --sort/--sortr has no effect.
+    file extensions are ignored.
 
     Example:
       Before: DSC08533.ARW DSC08533.JPG DSC08534.ARW DSC08534.JPG
@@ -163,13 +166,16 @@ OPTIONS
     Sorts matches in ascending order based on the provided criteria.
 
     Allowed values:
-      * 'default'  : Lexicographical order.
-      * 'size'     : Sort by file size.
-      * 'natural'  : Sort according to natural order.
-      * 'mtime'    : Sort by file last modified time.
-      * 'btime'    : Sort by file creation time.
-      * 'atime'    : Sort by file last access time.
-      * 'ctime'    : Sort by file metadata last change time.
+      * 'default'    : Lexicographical order.
+      * 'size'       : Sort by file size.
+      * 'natural'    : Sort according to natural order.
+      * 'mtime'      : Sort by file last modified time.
+      * 'btime'      : Sort by file creation time.
+      * 'atime'      : Sort by file last access time.
+      * 'ctime'      : Sort by file metadata last change time.
+      * 'time_var'   : Sort by time variable.
+      * 'int_var'    : Sort by integer variable.
+      * 'string_var' : Sort lexicographically by string variable.
 
   --sortr
     Accepts the same values as --sort but sorts matches in descending order.
@@ -178,9 +184,18 @@ OPTIONS
     Ensures sorting is performed separately within each directory rather than
     globally.
 
+  --sort-var
+    Active when using --sort/--sortr with time_var, int_var, or string_var.
+    Provide a supported variable to sort the files based on file metadata.
+    See https://f2.freshman.tech/guide/sorting for more details.
+
   -s, --string-mode
     Treats the search pattern (specified by -f/--find) as a literal string
     instead of a regular expression.
+
+  -t, --target-dir
+    Specify a target directory to move renamed files and reorganize your
+    filesystem.
 
   -V, --verbose
     Enables verbose output during the renaming operation.
