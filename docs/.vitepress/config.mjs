@@ -111,6 +111,7 @@ export default defineConfig({
 		],
 
 		socialLinks: [{ icon: "github", link: "https://github.com/ayoisaiah/f2" }],
+		head: [["link", { rel: "icon", href: "/favicon.ico" }]],
 	},
 	markdown: {
 		config(md) {
