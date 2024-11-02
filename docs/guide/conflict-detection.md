@@ -197,8 +197,8 @@ Output:
 ### 4. Forbidden Characters in Target Path
 
 If the target path contains
-[characters that are invalid](/reference/os-restrictions#forbidden-characters)
-for the current operating system:
+[characters that are invalid](/reference/os-differences) for the current
+operating system:
 
 ```bash
 f2 -f 'a' -r 'c:' # : is invalid in macOS

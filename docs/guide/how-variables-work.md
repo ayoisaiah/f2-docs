@@ -5,7 +5,7 @@ dynamically insert file information into new filenames during renaming.
 
 <!-- prettier-ignore-start -->
 ::: info
-[Capture variables](/docs/guide/tutorial.md#using-regex-capture-variables) are also supported but discussed separately.
+[Regex capture variables](/reference/regex#capture-variables-in-f2) are also supported but discussed separately.
 :::
 <!-- prettier-ignore-end -->
 

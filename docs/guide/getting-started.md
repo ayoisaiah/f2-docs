@@ -22,9 +22,11 @@ go install github.com/ayoisaiah/f2/cmd/f2@latest
 
 ## Install via NPM or Yarn
 
-For users who have Node.js installed, F2 can be installed through npm, yarn, or
-any other Node.js package manager. This method automatically downloads and
-installs the appropriate binary for your operating system and architecture.
+For users who have Node.js installed,
+[the F2 package](https://www.npmjs.com/package/@ayoisaiah/f2) can be installed
+through npm, yarn, or any other Node.js package manager. This method
+automatically downloads and installs the appropriate binary for your operating
+system and architecture.
 
 <!-- prettier-ignore-start -->
 ::: code-group
@@ -35,6 +37,10 @@ npm i @ayoisaiah/f2 -g
 
 ```bash [yarn]
 yarn global add @ayoisaiah/f2
+```
+
+```bash [bun]
+bun install -g @ayoisaiah/f2
 ```
 :::
 <!-- prettier-ignore-end -->
