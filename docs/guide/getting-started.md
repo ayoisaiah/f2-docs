@@ -137,7 +137,7 @@ move f2.exe C:\Users\<user>\.bin
 The native Windows Package Manager can be used to install F2 directly:
 
 ```sh
-winget install f2
+winget install ayoisaiah.f2
 ```
 
 ### Scoop
