@@ -17,7 +17,7 @@ If you have Go installed, you can easily install F2 using the `go install`
 command (requires v1.23 or later):
 
 ```bash
-go install github.com/ayoisaiah/f2/cmd/f2@latest
+go install github.com/ayoisaiah/f2/v2/cmd/f2@latest
 ```
 
 ## Install via NPM
@@ -43,10 +43,10 @@ your `$PATH` to make it accessible from the command line.
 
 ```bash
 # Download the archive
-curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.0/f2_2.0.0_linux_amd64.tar.gz
+curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.1/f2_2.0.1_linux_amd64.tar.gz
 
 # Extract the contents
-tar -xvzf f2_2.0.0_linux_amd64.tar.gz
+tar -xvzf f2_2.0.1_linux_amd64.tar.gz
 
 # Make the binary executable
 chmod +x f2
@@ -72,10 +72,10 @@ system directly from the releases page:
 
 ```bash
 # Download the deb package
-curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.0/f2_2.0.0_linux_amd64.deb
+curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.1/f2_2.0.1_linux_amd64.deb
 
 # Install the package
-sudo dpkg -i f2_2.0.0_linux_amd64.deb
+sudo dpkg -i f2_2.0.1_linux_amd64.deb
 ```
 
 ### Fedora / CentOS
@@ -85,10 +85,10 @@ releases page:
 
 ```bash
 # Download the rpm package
-curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.0/f2_2.0.0_linux_amd64.rpm
+curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.1/f2_2.0.1_linux_amd64.rpm
 
 # Install the package
-sudo rpm -i f2_2.0.0_linux_amd64.rpm
+sudo rpm -i f2_2.0.1_linux_amd64.rpm
 ```
 
 ## Install on macOS
@@ -101,10 +101,10 @@ correct binary for your architecture, follow these steps:
 
 ```bash
 # Download the archive
-curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.0/f2_2.0.0_darwin_amd64.tar.gz
+curl -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.1/f2_2.0.1_darwin_amd64.tar.gz
 
 # Extract the contents
-tar -xvzf f2_2.0.0_darwin_amd64.tar.gz
+tar -xvzf f2_2.0.1_darwin_amd64.tar.gz
 
 # Make the binary executable
 chmod +x f2
@@ -123,10 +123,10 @@ it to your system's `PATH` to use it from the command line:
 
 ```sh
 # Download the archive
-curl.exe -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.0/f2_2.0.0_windows_amd64.tar.gz
+curl.exe -LO https://github.com/ayoisaiah/f2/releases/download/v2.0.1/f2_2.0.1_windows_amd64.tar.gz
 
 # Extract the contents
-tar -xvzf f2_2.0.0_windows_amd64.tar.gz
+tar -xvzf f2_2.0.1_windows_amd64.tar.gz
 
 # Move the binary to a directory in your PATH
 move f2.exe C:\Users\<user>\.bin

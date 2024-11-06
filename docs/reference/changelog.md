@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.0.1 (2024-11-06)
+
+This is a patch release to update the Go module to v2. It contains no new
+features.
+
 ## 2.0.0 (2024-11-03)
 
 ### New features
