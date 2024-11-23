@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2.0.3 (2024-11-23)
+
+Fix bug caused by space trimming in `--find`, `--replace`, `--exclude`, and
+`--exclude-dir`
+
+## 2.0.2 (2024-11-22)
+
+Fix bug with using commas in find or replace strings
+
 ## 2.0.1 (2024-11-06)
 
 This is a patch release to update the Go module to v2. It contains no new
