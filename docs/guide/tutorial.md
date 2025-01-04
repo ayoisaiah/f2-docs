@@ -526,9 +526,11 @@ searched for matches even if other files would ordinarily be matched.
 
 With F2, you can chain as many renaming operations as you want in a single
 command. This makes it easy to selectively replace different aspects of file
-names. The first combination selects the pool of files that will be worked on,
-while subsequent ones act on the results of the previous one. If this concept
-sounds confusing, this example below should make it clearer:
+names.
+
+The first combination selects the pool of files that will be worked on, while
+subsequent ones act on the results of the previous one. If this concept sounds
+confusing, this example below should make it clearer:
 
 ```bash
 f2 -f '[^a-zA-Z]*([^(]*) \\(([^)]*)\\).*\\.iso$' -r 'Games/$2/$1{ext}' -f ' - ([^.]*)' -r ' ({<$1>.up})'
@@ -560,6 +562,27 @@ Games/Europe/Pro Evolution Soccer 2014.iso
 Afterward, the next combination targets the characters after hypen, uppercases
 them and places them in parenthesis in the new name thus yielding the final
 result.
+
+Let's say you then decide to remove the "2014" from "Pro Evolution Soccer
+2014.iso", you only need to append one more `-f` and leave out the corresponding
+`-r` flag to remove the specified characters:
+
+```bash
+f2 -f '[^a-zA-Z]*([^(]*) \\(([^)]*)\\).*\\.iso$' -r 'Games/$2/$1{ext}' -f ' - ([^.]*)' -r ' ({<$1>.up})' -f ' \d+'
+```
+
+Result:
+
+```text
+*——————————————————————————————————————————————————————————————————*———————————————————————————————————————————————————*————————*
+|                             ORIGINAL                             |                      RENAMED                      | STATUS |
+*——————————————————————————————————————————————————————————————————*———————————————————————————————————————————————————*————————*
+| 0956 - Call of Duty - Roads to Victory (Germany) (v1.01) [b].iso | Games/Germany/Call of Duty (ROADS TO VICTORY).iso | ok     |
+| 1925 - Gran Turismo (USA) (En,Fr,Es).iso                         | Games/USA/Gran Turismo.iso                        | ok     |
+| 2233 - Metal Gear Solid - Peace Walker (USA) (v1.01).iso         | Games/USA/Metal Gear Solid (PEACE WALKER).iso     | ok     |
+| 3185 - Pro Evolution Soccer 2014 (Europe) (It,El).iso            | Games/Europe/Pro Evolution Soccer.iso             | ok     |
+*——————————————————————————————————————————————————————————————————*———————————————————————————————————————————————————*————————*
+```
 
 ## Integration with Other Programs
 
