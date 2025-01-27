@@ -328,7 +328,7 @@ file(1).txt, file(2).txt, file(3).txt, etc.
 However, if you provide a custom pattern with:
 
 ```bash
-f2 ... -F --fix-conficts-pattern "_%02d"
+f2 ... -F --fix-conflicts-pattern "_%02d"
 ```
 
 The conflicts will be resolved with a two-digit zero-padded suffix, such as:

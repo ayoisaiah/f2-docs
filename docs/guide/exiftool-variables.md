@@ -125,7 +125,7 @@ what each option does.
 Here's how to use it:
 
 ```bash
-f2 -r '{xt.GPSDateTime}' --exiftool-opts '--dateFormat %Y-%m-%d'`,
+f2 -r '{xt.GPSDateTime}' --exiftool-opts '--dateFormat %Y-%m-%d'
 ```
 
 Output:
@@ -141,7 +141,7 @@ Output:
 Without the `--exiftool-opts`, the output will be:
 
 ```bash
-f2dev -r '{xt.GPSDateTime}' gps.jpg
+f2 -r '{xt.GPSDateTime}' gps.jpg
 ```
 
 Output:
