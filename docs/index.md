@@ -47,7 +47,7 @@ features:
     linkText: Learn More
   - title: High Performance
     details:
-      F2 is extremely fast even with a large amout of files, ensuring minimal
+      F2 is extremely fast even with a large amount of files, ensuring minimal
       delays during renaming tasks.
     link: /reference/benchmarks
     linkText: See Benchmarks
