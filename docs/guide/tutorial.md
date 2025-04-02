@@ -559,7 +559,7 @@ Games/USA/Metal Gear Solid - Peace Walker.iso
 Games/Europe/Pro Evolution Soccer 2014.iso
 ```
 
-Afterward, the next combination targets the characters after hypen, uppercases
+Afterward, the next combination targets the characters after hyphen, uppercases
 them and places them in parenthesis in the new name thus yielding the final
 result.
 
