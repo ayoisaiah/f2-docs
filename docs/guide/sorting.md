@@ -17,10 +17,11 @@ options:
 - `btime`: Sort the files by file birth time.
 - `atime`: Sort the files by last access time.
 - `ctime`: Sort the files by last changed time.
-- `time_var`: Sort the files by a custom time variable (use with `--sort-var`).
-- `int_var`: Sort the files using a custom integer variable (use with
+- `time_var`: Sort the files by an arbitrary time variable (use with
   `--sort-var`).
-- `string_var`: Sort the files using a custom string variable (use with
+- `int_var`: Sort the files by an arbitrary integer variable (use with
+  `--sort-var`).
+- `string_var`: Sort the files by an arbitrary string variable (use with
   `--sort-var`).
 
 Sorting is in ascending order by default; for descending order, use `--sortr`:
@@ -33,12 +34,12 @@ f2 -f 'image' -r 'pic-{%03d}' --sort natural # ascending order
 f2 -f 'image' -r 'pic-{%03d}' --sortr natural # descending order
 ```
 
-## Sorting by Custom Variables
+## Sorting by Arbitrary Variables
 
-With `time_var`, `int_var`, and `string_var`, you can sort files using custom
-attributes. These must be used
-alongside``--sort-var to specify the variable. For instance, if sorting with`time_var`, `--sort-var`
-should resolve to a datetime string:
+With `time_var`, `int_var`, and `string_var`, you can sort files using file
+attributes. These must be used alongside `--sort-var` to specify the variable.
+For instance, if sorting with `time_var`, `--sort-var` should resolve to a
+datetime string:
 
 ```bash
 f2 -f 'image' -r 'pic-{%03d}' --sort time_var --sort-var '{xt.DateTimeOriginal}'
@@ -48,11 +49,12 @@ Here, the `DateTimeOriginal` attribute (using
 [exiftool](/guide/exiftool-variables)) sorts images by the date they were taken.
 Without exiftool, the `{x.cdt}` variable could serve a similar purpose.
 
-Another example, is sorting by ISO which will use `int_var` instead since the
-ISO property is an integer:
+Another example, is sorting by the ISO of an image file. Since ISO is an
+integer, you can use `int_var` instead, then specify `{xt.ISO}` to resolve the
+ISO value for each file:
 
 ```bash
-f2 -f 'image' -r 'pic-{%03d}' --sort time_var --sort-var '{xt.ISO}'
+f2 -f 'image' -r 'pic-{%03d}' --sort int_var --sort-var '{xt.ISO}'
 ```
 
 ## Directory-Specific Sorting
