@@ -113,6 +113,14 @@ chmod +x f2
 sudo mv f2 /usr/local/bin
 ```
 
+### Brew
+
+Alternatively, F2 can also be installed using brew:
+
+```sh
+brew install f2
+```
+
 ## Install on Windows
 
 ### Binary Downloads
