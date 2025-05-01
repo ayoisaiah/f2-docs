@@ -196,7 +196,7 @@ Directories are exempted from the renaming operation by default. Use the
 
 _Original tree_:
 
-```plaintext
+```text
 .
 ├── pic1.jpg
 ├── pic2.png
@@ -521,6 +521,23 @@ Output:
 Notice that the `sample_ogg.ogg` file isn't included even though it matches the
 find pattern. When you specify a set of files as above, only those files will be
 searched for matches even if other files would ordinarily be matched.
+
+If you'd like to use regular expressions to target specific files, then use the
+`-I/--include` flag. It works exactly the same way as `--exclude`:
+
+```bash
+f2 -f "sample" -r "example" -I flac
+```
+
+Output:
+
+```text
+┌───────────────────────────────────────────────┐
+| ORIGINAL         | RENAMED           | STATUS |
+| ********************************************* |
+| sample_flac.flac | example_flac.flac | ok     |
+└───────────────────────────────────────────────┘
+```
 
 ## Chaining Renaming Operations
 

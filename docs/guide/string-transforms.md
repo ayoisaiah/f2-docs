@@ -90,6 +90,9 @@ conventions and character restrictions:
 - `{.mac}`: Remove characters not allowed in macOS file names (`:`).
 - `{.di}`: Remove diacritics, replacing accented characters with their closest
   non-accented equivalents (e.g., `très` bien.jpg becomes `tres bien.jpg`).
+- `{.norm}`: Perform
+  [Unicode normalization](https://github.com/ayoisaiah/f2/discussions/92)
+  (NFKC).
 
 ### 1. Strip Forbidden Characters for Windows
 
@@ -126,6 +129,22 @@ Result:
 | **************************** |
 | žůžo.txt | zuzo.txt | ok     |
 └──────────────────────────────┘
+```
+
+### 3. Normalize Unicode Characters
+
+```bash
+f2 -r '{.norm}'
+```
+
+Result:
+
+```text
+*——————————*——————————*————————*
+| ORIGINAL | RENAMED  | STATUS |
+*——————————*——————————*————————*
+| 𝐇𝐇𝐇𝐇.txt | HHHH.txt | ok     |
+*——————————*——————————*————————*
 ```
 
 ## Parsing Arbitrary Text as Dates

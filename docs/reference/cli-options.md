@@ -1,7 +1,7 @@
 # Command-Line Options
 
 ```text
-f2 v2.0.0
+f2 v2.1.0
 Ayooluwa Isaiah <ayo@freshman.tech>
 
 f2 bulk renames files and directories, matching files against a specified
@@ -100,6 +100,15 @@ OPTIONS
 
     To match hidden directories as well, combine this with the -d/--include-dir
     flag.
+
+  -I, --include
+    Only includes files that match the provided regular expression instead of
+    all files matched by the --find flag.
+
+    This flag can be repeated to specify multiple include patterns.
+
+    Example:
+      -I 'json' -I 'yml' (only include JSON and YAML files)
 
   -d, --include-dir
     Includes matching directories in the renaming operation (they are excluded
@@ -209,9 +218,6 @@ ENVIRONMENTAL VARIABLES
 
   F2_NO_COLOR, NO_COLOR
     Set to any value to disable coloured output.
-
-  F2_DEBUG
-    Enable debug mode.
 
 LEARN MORE
   Read the manual at https://f2.freshman.tech
