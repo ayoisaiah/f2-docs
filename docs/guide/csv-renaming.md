@@ -120,7 +120,7 @@ bike.jpeg
 Usage with `-f` and `-r`:
 
 ```bash
-f2 --csv 'input.csv' -r '%03d{{ext}}'
+f2 --csv 'input.csv' -r '%03d{ext}'
 ```
 
 Output:
@@ -137,7 +137,7 @@ Output:
 You can also match a specific file using the `-f` option:
 
 ```bash
-f2 --csv 'input.csv' -f 'bike.jpeg' -r '%03d{{ext}}'
+f2 --csv 'input.csv' -f 'bike.jpeg' -r '%03d{ext}'
 ```
 
 Output:
@@ -193,7 +193,7 @@ S04E23.m4a,Premier League Show,Where will Sancho fit in at United,31-July-2021,3
 Renaming using CSV variables:
 
 ```bash
-f2 --csv 'input.csv' -r '{{csv.2}} - {{csv.3}} ({{csv.5}})'
+f2 --csv 'input.csv' -r '{csv.2} - {csv.3} ({csv.5})'
 ```
 
 Output:
@@ -211,8 +211,8 @@ You can also use CSV variables in the second column of the CSV file:
 
 ```csv
 Filename,Replacement,Podcast name,Description,Date,Duration
-episode-001.mp3,{{csv.3}} - {{csv.4}} ({{csv.6}}),History on Steroids,The story of WW2,27-Aug-2006,2hrs47mins
-S04E23.m4a,{{csv.4}} ({{csv.5}}),Premier League Show,Where will Sancho fit in at United,31-July-2021,30mins
+episode-001.mp3,{csv.3} - {csv.4} ({csv.6}),History on Steroids,The story of WW2,27-Aug-2006,2hrs47mins
+S04E23.m4a,{csv.4} ({csv.5}),Premier League Show,Where will Sancho fit in at United,31-July-2021,30mins
 ```
 
 Command:
