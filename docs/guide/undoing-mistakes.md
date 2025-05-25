@@ -10,14 +10,10 @@ and can be used to restore the original filenames.
 ## Backup File Locations
 
 After each renaming operation, a backup file is created in the following
-locations depending on the operating system:
+locations depending on the operating system (`/tmp/f2/backups` on Linux).
 
-- **Linux**: `~/.local/share/f2/backups`
-- **macOS**: `~/Library/Application Support/f2/backups`
-- **Windows**: `%LOCALAPPDATA%\f2\backups`
-
-The backup file is automatically named based on the directory where the
-operation was performed, ensuring it is easily identifiable.
+The backup file is named based on the directory where the operation was
+performed, ensuring it is easily identifiable.
 
 ## Example Renaming Operation
 
@@ -61,8 +57,8 @@ renamed versions, which allows the operation to be undone later.
 
 ## Reverting the Renaming Operation
 
-To revert the renaming operation, use the `--undo` or `-u` flag. Note that you
-must run the undo command in the same directory where the renaming took place.
+To revert the renaming operation, use the `--undo` or `-u` flag. **Note that you
+must run the undo command in the same directory where the renaming took place**.
 
 You can perform a dry-run first to preview the changes before executing the
 actual reversion:
@@ -89,7 +85,7 @@ Output:
 
 To actually revert the renaming operation, use:
 
-```text
+```bash
 f2 -ux
 ```
 

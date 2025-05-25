@@ -132,7 +132,7 @@ Output:
 | ORIGINAL        | RENAMED         | STATUS |
 | ****************************************** |
 | abc.txt         | 123.txt         | ok     |
-| abc_abc.txt     | 123_abc.txt     | ok     |
+| abc_abc.txt     | abc_123.txt     | ok     |
 | abc_abc_abc.txt | abc_abc_123.txt | ok     |
 └────────────────────────────────────────────┘
 ```
