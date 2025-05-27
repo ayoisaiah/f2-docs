@@ -1,7 +1,7 @@
 # Command-Line Options
 
 ```text
-f2 v2.1.0
+f2 v2.1.2
 Ayooluwa Isaiah <ayo@freshman.tech>
 
 f2 bulk renames files and directories, matching files against a specified
