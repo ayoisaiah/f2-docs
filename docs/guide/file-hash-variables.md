@@ -16,6 +16,8 @@ Supported hash functions include:
 - `sha256`: Produces a more secure 256-bit hash.
 - `sha512`: Generates a 512-bit hash, offering the highest level of uniqueness
   and security among these options.
+- `xxh32`: Generates a 32-bit fast hash value, suitable for checksums and quick uniqueness identification. It offers high performance but has a slightly higher collision probability compared to cryptographic hash functions. See [Any known xxHash collision so far? #165](https://github.com/Cyan4973/xxHash/issues/165 ) for details on collision resistance and real-world reports.
+- `xxh64`: Produces a 64-bit fast hash value, providing better uniqueness guarantees than `xxh32` and is suitable for scenarios requiring a larger hash space.
 
 ## Example
 
