@@ -45,7 +45,7 @@ Once this operation is performed, a backup file is automatically created:
 ls /tmp/f2/backups # On Linux
 ```
 
-The backup file is an MD5 hash of the absolute path for the current working
+The backup file is a MD5 hash of the absolute path for the current working
 directory:
 
 ```text
