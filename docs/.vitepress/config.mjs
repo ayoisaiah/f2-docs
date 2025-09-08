@@ -40,6 +40,10 @@ export default defineConfig({
 				text: "Recipes",
 				items: [
 					{
+						text: "Find Expressions",
+						link: "/guide/find-expressions",
+					},
+					{
 						text: "Renaming with Indices",
 						link: "/guide/indexing",
 					},

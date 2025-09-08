@@ -93,28 +93,42 @@ Output:
 f2 -f '(2021)' -r '[2022]' -s
 ```
 
+## Selecting Files with Expressions
+
+You can also select files using powerful custom rules with the `-f/--find` flag.
+It takes an expression that is checked for every file. If the expression returns
+true, the file is selected for the renaming operation.
+
+```bash
+# Select files older than 30 days
+f2 -f '{{btime.since} > dur("30d")}'
+```
+
+See the [full documentation here](/guide/find-expressions)
+
 ## Limiting the Number of Replacements
 
 By default, F2 replaces all matches in a filename. However, there are times when
 you might want to limit the number of replacements, and for this, the
-`-l/--replace-limit` option can be used.
+`-l/--replace-limit` or `-L/--replace-range` options can be used.
 
 To replace only the first occurrence of a match in each filename, use:
 
 ```bash
 f2 -f 'abc' -r '123' -l 1
+# or f2 -f 'abc' -r '123' -L 1
 ```
 
 Output:
 
 ```text
-┌────────────────────────────────────────────┐
-| ORIGINAL        | RENAMED         | STATUS |
-| ****************************************** |
+*—————————————————*—————————————————*————————*
+|    ORIGINAL     |     RENAMED     | STATUS |
+*—————————————————*—————————————————*————————*
 | abc.txt         | 123.txt         | ok     |
 | abc_abc.txt     | 123_abc.txt     | ok     |
 | abc_abc_abc.txt | 123_abc_abc.txt | ok     |
-└────────────────────────────────────────────┘
+*—————————————————*—————————————————*————————*
 ```
 
 In this example, only one occurrence of `abc` is replaced in each filename.
@@ -123,19 +137,59 @@ You can also replace from the end of the file with a negative number:
 
 ```bash
 f2 -f 'abc' -r '123' -l -1
+# or f2 -f 'abc' -r '123' -L -1
 ```
 
 Output:
 
 ```text
-┌────────────────────────────────────────────┐
-| ORIGINAL        | RENAMED         | STATUS |
-| ****************************************** |
+*—————————————————*—————————————————*————————*
+|    ORIGINAL     |     RENAMED     | STATUS |
+*—————————————————*—————————————————*————————*
 | abc.txt         | 123.txt         | ok     |
 | abc_abc.txt     | abc_123.txt     | ok     |
 | abc_abc_abc.txt | abc_abc_123.txt | ok     |
-└────────────────────────────────────────────┘
+*—————————————————*—————————————————*————————*
 ```
+
+Where `-L/--replace-range` shines is when you want to replace a match in an
+arbitrary position. For example, you can replace the first and third matches
+_alone_ with:
+
+```bash
+f2 -f 'abc' -r '123' -L '1;3'
+```
+
+```text
+*—————————————————*—————————————————*————————*
+|    ORIGINAL     |     RENAMED     | STATUS |
+*—————————————————*—————————————————*————————*
+| abc.txt         | 123.txt         | ok     |
+| abc_abc.txt     | 123_abc.txt     | ok     |
+| abc_abc_abc.txt | 123_abc_123.txt | ok     |
+*—————————————————*—————————————————*————————*
+```
+
+Or you can replace the 2nd match alone with:
+
+```bash
+f2 -f 'abc' -r '123' -L '2'
+```
+
+```text
+w*—————————————————*—————————————————*———————————*
+|    ORIGINAL     |     RENAMED     |  STATUS   |
+*—————————————————*—————————————————*———————————*
+| abc.txt         | abc.txt         | unchanged |
+| abc_abc.txt     | abc_123.txt     | ok        |
+| abc_abc_abc.txt | abc_123_abc.txt | ok        |
+*—————————————————*—————————————————*———————————*
+```
+
+### Other examples
+
+- `--replace-range 1..3`: replace the first 3 matches.
+- `--replace-range 1;-2`: replace the first match and the 2nd to the last match
 
 ## Renaming Files Recursively
 

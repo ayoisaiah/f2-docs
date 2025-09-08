@@ -2,7 +2,7 @@
 
 ```text
 f2 v2.1.2
-Ayooluwa Isaiah <ayo@freshman.tech>
+"Ayooluwa Isaiah" <ayo@freshman.tech>
 
 f2 bulk renames files and directories, matching files against a specified
 pattern. It employs safety checks to prevent accidental overwrites and
@@ -46,6 +46,16 @@ OPTIONS
 
   -c, --clean
     Clean empty directories that were traversed in a renaming operation.
+
+  --dt
+    Sets the default datetime variable for your replace pattern so that you don't
+    have to repeat the full variable path for each token. For example, the
+    following two commands produce the same result, but the second is significantly
+    easier to type:
+
+    $ f2 -r '{xt.DateTimeOriginal.dt.YYYY}-{xt.DateTimeOriginal.dt.MM}-{xt.DateTimeOriginal.DD}T{xt.DateTimeOriginal.dt.H}{xt.DateTimeOriginal.dt.MM}{xt.DateTimeOriginal.dt.ss}'
+
+    $ f2 -r '{YYYY}-{MM}-{DD}T{H}{MM}{ss}' --dt 'xt.DateTimeOriginal'
 
   -E, --exclude
     Excludes files and directories that match the provided regular expression.
@@ -167,6 +177,14 @@ OPTIONS
     means replace all matches. Negative values replace from the end of the
     filename.
 
+  -L, --replace-range
+    Replace a specific match or range of matches using an index.
+
+    Example:
+      --replace-range 1..3 # replace the first 3 matches
+      --replace-range 2 # replace the 2nd match alone
+      --replace-range 1;-2 # replace the first match and the 2nd to the last match
+
   --reset-index-per-dir
     Resets the auto-incrementing index when entering a new directory during a
     recursive operation.
@@ -190,8 +208,7 @@ OPTIONS
     Accepts the same values as --sort but sorts matches in descending order.
 
   --sort-per-dir
-    Ensures sorting is performed separately within each directory rather than
-    globally.
+    Ensures sorting is performed separately within each directory rather than globally.
 
   --sort-var
     Active when using --sort/--sortr with time_var, int_var, or string_var.
@@ -203,8 +220,22 @@ OPTIONS
     instead of a regular expression.
 
   -t, --target-dir
-    Specify a target directory to move renamed files and reorganize your
-    filesystem.
+    Specify a target directory to move renamed files and reorganize your filesystem.
+
+  --timezone
+    When using datetime variables, this sets the target timezone for timestamp formatting.
+    It correctly handles Daylight Saving Time (DST) and ensures timestamps reflect the
+    local "wall clock" time of a specific location.
+
+    The <zone> argument must be a valid IANA Time Zone Database name (e.g.,
+    "America/New_York", "Europe/London", "Africa/Kigali", "UTC").
+
+    By default, the file's embedded timezone is used. If the file has no timezone
+    information, your system's local timezone is used as a fallback.
+
+    Examples:
+      # Rename photos using the local time in Tokyo (JST, UTC+9)
+      $ f2 -f '*.dng' -r '{xt.DateTimeOriginal.dt}' --timezone 'Asia/Tokyo'
 
   -V, --verbose
     Enables verbose output during the renaming operation.

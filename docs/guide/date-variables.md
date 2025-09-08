@@ -78,3 +78,61 @@ result:
 | qeila4tnvr971.webp | Jun-03-2022_image006.webp | ok     |
 *---------------------------------------------------------*
 ```
+
+## Using the --dt flag
+
+When using date variables, it can be tedious to type out the full path for each
+variable token. The `-dt` flag allows you to specify the default datetime
+variable for your replacement pattern to ease this burden.
+
+For example, the two commands below produce exactly the same result:
+
+```bash
+f2 -r '{xt.DateTimeOriginal.dt.YYYY}{xt.DateTimeOriginal.dt.MM}{xt.DateTimeOriginal.dt.DD}_{xt.DateTimeOriginal.dt.H}{xt.DateTimeOriginal.dt.mm}{xt.DateTimeOriginal.dt.ss}000_{f}{ext.lw}'
+```
+
+```bash
+f2 -r "{YYYY}{MM}{DD}_{H}{MM}{ss}000_{f}{ext.lw}" --dt "xt.DateTimeOriginal"
+```
+
+## Shifting timezones with `--timezone`
+
+The `--timezone` flag has been provided for shifting the timezone of any
+variable to a desired time zone. By default, the file's embedded timezone is
+used. If the file has no timezone information, your system's local timezone is
+used as a fallback.
+
+The argument must be a valid IANA Time Zone Database name such as
+`America/New_York`, `Europe/London`, `Africa/Kigali`, or `UTC`.
+
+### Examples
+
+1. Shifting the timezone to UTC time
+
+   ```bash
+   f2 -r "{YYYY}{MM}{DD}_{H}{MM}{ss}000_{f}{ext.lw}" --dt "xt.DateTimeOriginal" --timezone 'UTC' *.dng
+   ```
+
+   ```text
+   *———————————*——————————————————————————————*————————*
+   | ORIGINAL  |           RENAMED            | STATUS |
+   *———————————*——————————————————————————————*————————*
+   | img34.dng | 20240628_050619000_img34.dng | ok     |
+   | img66.dng | 20240628_050628000_img66.dng | ok     |
+   *———————————*——————————————————————————————*————————*
+   ```
+
+2. Shifting the timezone to Tokyo time
+
+   ```bash
+   f2 -r "{YYYY}{MM}{DD}_{H}{MM}{ss}000_{f}{ext.lw}" --dt "xt.DateTimeOriginal" --timezone 'Asia/Tokyo' *.dng
+   ```
+
+   ```text
+   *———————————*——————————————————————————————*————————*
+   | ORIGINAL  |           RENAMED            | STATUS |
+   *———————————*——————————————————————————————*————————*
+   | img34.dng | 20240628_140619000_img34.dng | ok     |
+   | img66.dng | 20240628_140628000_img66.dng | ok     |
+   *———————————*——————————————————————————————*————————*
+   ```

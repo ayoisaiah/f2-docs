@@ -16,6 +16,7 @@ Supported hash functions include:
 - `sha256`: Produces a more secure 256-bit hash.
 - `sha512`: Generates a 512-bit hash, offering the highest level of uniqueness
   and security among these options.
+- `xxh32` and `xxh64`: Uses the [xxhash algorithm](https://xxhash.com/).
 
 ## Example
 
