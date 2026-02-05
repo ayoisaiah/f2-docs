@@ -92,7 +92,7 @@ f2 -r '{xt.DateTimeOriginal.dt.YYYY}{xt.DateTimeOriginal.dt.MM}{xt.DateTimeOrigi
 ```
 
 ```bash
-f2 -r "{YYYY}{MM}{DD}_{H}{MM}{ss}000_{f}{ext.lw}" --dt "xt.DateTimeOriginal"
+f2 -r "{YYYY}{MM}{DD}_{H}{mm}{ss}000_{f}{ext.lw}" --dt "xt.DateTimeOriginal"
 ```
 
 ## Shifting timezones with `--timezone`
