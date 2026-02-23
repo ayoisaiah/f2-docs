@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 2.2.2 (2025-11-10)
+
+- 8fd3279 append forbidden characters to status message
+- 2253e0a fix windows test
+- e2ec9ec prevent matching empty variables
+- e0fc088 show intermediate results when chaining
+- 438d0c6 test variable regex matches
+- 20fc61e test variable regex matches
+- 527e5bd upgrade urfave/cli
+- 455fc15 use keepachangelog.com format
+
+## 2.2.1 (2025-09-14)
+
+### Fixed
+
+- Ensure regex searches don't incorrectly trigger find expressions.
+
 ## 2.2.0 (2025-09-08)
 
 ### New features
